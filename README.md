@@ -32,6 +32,11 @@ de Hipertexto.
 - Por default al solicitar una página a recursos web al servidor se utiliza el método
 get.
 
+### Se implementará Petición ***POST HTTP***
+- Una petición POST nos permite enviar información al servidor web. 
+- La petición POST se envía en el cuerpo de la petición HTTP.
+- En cambio, una petición GET se envía la información en el URL de la petición.
+
 ## Tecnología PrimeFase
 Primefaces es una librería ligera que está encapsulada en un único jar 
 y que no requiere el uso o instalación de software de terceros para su 
