@@ -10,6 +10,21 @@
     </h:head>
 
     <h:body>
+
+        <div class="card">
+            <h:form id="forma-clientes">
+                <p:growl id="mensajes" showDetails="true"/>
+                <div>
+                    <p:menubar>
+                        <p:menuitem value="Inicio" icon="pi pi-fw pi-user"
+
+                                    actionListener="#{indexControlador.cargarDatos}"/>
+
+                    </p:menubar>
+                </div>
+            </h:form>
+        </div>
+
         <div class="flex justify-content-center flex-wrap
         card-container yellow-container">
             <div class="flex align-items-center justify-content-center
