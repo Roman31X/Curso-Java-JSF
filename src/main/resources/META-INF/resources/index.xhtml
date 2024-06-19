@@ -63,8 +63,39 @@
 
 
             </h:form>
+            <h:form id="forma-modal">
+                <p:dialog header="Detalles Clientes" showEffect="fade"
+                          modal="true" widgetVar="ventanaModalCliente"
+                          rsponsive="true">
+                    <p:outputPanel id="cliente-ventana" class="ui-flid">
+                        <div class="field">
+                            <p:outputLabel for="nombre">Nombre:</p:outputLabel>
+                            <p:inputText id="nombre"
+                            value="#{indexControlador.clienteSeleccionado.nombre}"/>
+                        </div>
+                        <div class="field">
+                            <p:outputLabel for="apellido">Apellido:</p:outputLabel>
+                            <p:inputText id="apellido"
+                            value="#{indexControlador.clienteSeleccionado.apellido}"/>
+                        </div>
+                        <div class="field">
+                            <p:outputLabel for="membresia">Membresía:</p:outputLabel>
+                            <p:inputNumber id="membresia"
+                            value="#{indexControlador.clienteSeleccionado.membresia}"
+                            require="true"/>
+                        </div>
+                    </p:outputPanel>
+                    <f:facet name="footer">
+                        <p:commanButton value="Guardar" icon=" pi pi-check"
+                                        process="cliente-ventana @this"
+                                        actionListener="#{indexControlador.guardarCliente}"/>
+                        <p:commanButton value="Cancelar" icon="pi pi-times"
+                                        onclick="PF('ventanaModalCliente').hide()"
+                                        class="ui-button-secondary" type="button"/>
+                    </f:facet>
+                </p:dialog>
+            </h:form>
         </div>
-
     </h:body>
 
 
