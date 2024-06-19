@@ -14,23 +14,32 @@
         <div class="card">
             <h:form id="forma-clientes">
                 <p:growl id="mensajes" showDetails="true"/>
-                <div>
+                <!-- Se implementa componente MENU-BAR-->
+                <div class="card">
                     <p:menubar>
                         <p:menuitem value="Inicio" icon="pi pi-fw pi-user"
-
+                                    update=":forma-clientes:clientes-tabla"
                                     actionListener="#{indexControlador.cargarDatos}"/>
-
                     </p:menubar>
                 </div>
-            </h:form>
-        </div>
+                <!-- Se implementa componente DATA-TABLE-->
+                <div class="card">
+                    <p:dataTable value="#{indexControlador.clientes}" var="cliente"
+                                 id="clientes-tabla" widgetVar="clientesTabla">
+                        <f:facet name="header">
+                            <div class="flex justify-content-center flex-wrap
+                                        card-container yellow-container">
+                                <div class="flex align-items-center justify-content-center
+                                            w-20rem h-4rem bg-yellow-500 font-bold text-gray-900 border-round">
+                                    <h2>Zona Fit GYM 🔱</h2>
+                                </div>
+                            </div>
+                        </f:facet>
+                    </p:dataTable>
+                </div>
 
-        <div class="flex justify-content-center flex-wrap
-        card-container yellow-container">
-            <div class="flex align-items-center justify-content-center
-            w-20rem h-4rem bg-yellow-500 font-bold text-gray-900 border-round">
-                <h2>Zona Fit GYM 🔱</h2>
-            </div>
+
+            </h:form>
         </div>
 
     </h:body>
