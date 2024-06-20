@@ -6,7 +6,6 @@
     <h:head>
         <title>Zona Fit GYM 🔱</title>
         <link rel="stylesheet" href="https://unpkg.com/primeflex@latest/primeflex.css"/>
-
     </h:head>
 
     <h:body>
@@ -20,12 +19,10 @@
                         <p:menuitem value="Inicio" icon="pi pi-fw pi-user"
                                     update=":forma-clientes:clientes-tabla"
                                     actionListener="#{indexControlador.cargarDatos}"/>
-
                         <p:menuitem value="Nuevo Cliente" icon="pi pi-fw pi-plus"
                                     actionListener="#{indexControlador.agregarCliente}"
                                     update=":forma-modal:cliente-ventana"
                                     oncomplete="PF('ventanaModalCliente').show()"/>
-
                     </p:menubar>
                 </div>
                 <!-- Se implementa componente DATA-TABLE-->
@@ -35,8 +32,10 @@
                         <f:facet name="header">
                             <div class="flex justify-content-center flex-wrap
                                         card-container yellow-container">
-                                <div class="flex align-items-center justify-content-center
-                                            w-20rem h-4rem bg-yellow-500 font-bold text-gray-900 border-round">
+                                <div class="flex align-items-center
+                                            justify-content-center
+                                            w-20rem h-4rem bg-yellow-500 font-bold
+                                            text-gray-900 border-round m-2">
                                     <h2>Zona Fit GYM 🔱</h2>
                                 </div>
                             </div>
@@ -56,6 +55,20 @@
 
                         <p:column headerText="MEMBRESIA">
                             <h:outputText value="#{cliente.membresia}"/>
+                        </p:column>
+
+                        <p:column>
+                            <p:commandButton value="Editar" icon="pi pi-pencil"
+                                             update=":forma-modal:cliente-ventana"
+                                             process="@this"
+                                             oncomplete="PF('ventanaModalCliente').show()"
+                                             class="ui-button-primary"
+                                             style="margin-right: .5rem">
+                                <f:setPropertyActionListener
+                                    value="#{cliente}"
+                                    target="#{indexControlador.clienteSeleccionado}"/>
+                                <p:resetInput target=":forma-modal:cliente-ventana"/>
+                            </p:commandButton>
                         </p:column>
 
                     </p:dataTable>
