@@ -66,4 +66,6 @@ public class IndexControlador {
         //Reset del objeto cliente seleccionado
         this.clienteSeleccionado = null;
     }
+
+
 }
